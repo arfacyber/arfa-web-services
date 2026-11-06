@@ -10,23 +10,19 @@ import { cn } from "@/lib/utils";
 export function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-  const toggleIndex = (index: number) => {
-    setOpenIndex((prev) => (prev === index ? null : index));
-  };
-
   return (
     <section
       id="faq"
-      className="relative border-t border-white/10 bg-navy-900/30 py-24 sm:py-28"
+      className="relative border-t border-white/10 py-16 sm:py-20"
     >
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="FAQ"
           title="Pertanyaan yang Sering Diajukan"
-          subtitle="Jawaban transparan mengenai estimasi durasi, pengelolaan teknis, layanan infrastruktur, dan tahapan pembayaran."
+          subtitle="Informasi seputar biaya pembuatan website, penyesuaian fitur, waktu pengerjaan, domain, hingga proses pembayaran."
         />
 
-        <div className="mt-14 space-y-4">
+        <div className="mt-12 space-y-3.5">
           {FAQ_DATA.map((item, index) => {
             const isOpen = openIndex === index;
             return (
@@ -36,16 +32,18 @@ export function FaqSection() {
                   "rounded-2xl border transition-colors",
                   isOpen
                     ? "border-cyan-500/40 bg-navy-900/90"
-                    : "border-white/10 bg-navy-900/40 hover:border-white/20"
+                    : "border-white/10 bg-navy-900/45 hover:border-white/20"
                 )}
               >
                 <button
                   type="button"
-                  onClick={() => toggleIndex(index)}
+                  onClick={() =>
+                    setOpenIndex((prev) => (prev === index ? null : index))
+                  }
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+                  className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left"
                 >
-                  <span className="text-base font-semibold text-white sm:text-lg">
+                  <span className="text-base font-semibold text-white">
                     {item.question}
                   </span>
                   <ChevronDown
@@ -62,10 +60,10 @@ export function FaqSection() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25 }}
+                      transition={{ duration: 0.2 }}
                       className="overflow-hidden"
                     >
-                      <div className="border-t border-white/10 px-6 pt-4 pb-6 text-sm leading-relaxed text-slate-300 sm:text-base">
+                      <div className="border-t border-white/10 px-6 pt-3.5 pb-5 text-sm leading-relaxed text-slate-300">
                         {item.answer}
                       </div>
                     </motion.div>

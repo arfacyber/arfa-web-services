@@ -5,6 +5,7 @@ import { HeroSection } from "@/sections/HeroSection";
 import { ServicesSection } from "@/sections/ServicesSection";
 import { PricingSection } from "@/sections/PricingSection";
 import { PortfolioPreviewSection } from "@/sections/PortfolioPreviewSection";
+import { TechnologiesSection } from "@/sections/TechnologiesSection";
 import { WhyChooseSection } from "@/sections/WhyChooseSection";
 import { ProcessSection } from "@/sections/ProcessSection";
 import { FaqSection } from "@/sections/FaqSection";
@@ -19,6 +20,7 @@ export default function HomePage() {
         <ServicesSection />
         <PricingSection />
         <PortfolioPreviewSection />
+        <TechnologiesSection />
         <WhyChooseSection />
         <ProcessSection />
         <FaqSection />

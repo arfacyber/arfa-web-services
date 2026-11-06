@@ -1,11 +1,12 @@
 import React from "react";
-import { SITE_CONFIG, SERVICES_DATA } from "@/config/site";
+import { SITE_CONFIG, SERVICE_CATEGORIES } from "@/config/site";
 
 export function JsonLd() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: SITE_CONFIG.brandName,
+    name: SITE_CONFIG.productName,
+    brand: SITE_CONFIG.brandName,
     url: SITE_CONFIG.siteUrl,
     description: SITE_CONFIG.hero.subheadline,
     founder: {
@@ -14,24 +15,27 @@ export function JsonLd() {
       url: SITE_CONFIG.portfolioUrl,
     },
     sameAs: [SITE_CONFIG.portfolioUrl],
+    areaServed: "ID",
     knowsAbout: [
-      "Web Development",
-      "Next.js",
-      "React.js",
-      "TypeScript",
+      "HTML5",
+      "CSS3",
+      "JavaScript",
       "Tailwind CSS",
-      "Laravel REST API",
-      "UI/UX Design",
+      "Next.js",
+      "TypeScript",
+      "PHP",
+      "Laravel",
+      "MySQL",
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Website Development Services",
-      itemListElement: SERVICES_DATA.map((service) => ({
+      name: "Layanan Pembuatan Website & Aplikasi Web ARFA.DEV",
+      itemListElement: SERVICE_CATEGORIES.map((service) => ({
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: service.title,
-          description: service.description,
+          name: service.name,
+          description: service.shortDescription,
         },
       })),
     },

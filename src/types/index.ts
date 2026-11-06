@@ -3,36 +3,42 @@ import type { LucideIcon } from "lucide-react";
 export interface NavItem {
   label: string;
   href: string;
-  isExternal?: boolean;
 }
 
-export interface ServiceItem {
-  id: string;
-  title: string;
-  description: string;
-  features: string[];
-  icon: LucideIcon;
-}
-
-export interface PricingTier {
+export interface ServiceCategory {
   id: string;
   name: string;
-  tagline: string;
-  priceLabel: string;
   startingPrice: string;
-  priceNote: string;
+  priceUnit?: string;
+  shortDescription: string;
+  targets: string[];
   features: string[];
-  isHighlighted?: boolean;
+  estimatedDuration: string;
+  deliverablesInfo: string;
+  icon: LucideIcon;
+  isRecommended?: boolean;
 }
 
-export interface PortfolioSlot {
+export interface PortfolioProject {
   id: string;
   title: string;
   category: string;
   description: string;
+  imagePath: string;
   techStack: string[];
-  externalUrl: string;
-  isPlaceholder?: boolean;
+  keyFeatures: string[];
+  demoUrl?: string;
+  statusLabel: string;
+}
+
+export interface TechStackCategory {
+  id: string;
+  categoryName: string;
+  description: string;
+  items: {
+    name: string;
+    role: string;
+  }[];
 }
 
 export interface WhyChooseItem {
@@ -54,15 +60,11 @@ export interface FaqItem {
   answer: string;
 }
 
-export interface ContactInquiryPayload {
+export interface OrderInquiryPayload {
   name: string;
-  email: string;
-  websiteType: string;
+  organization: string;
+  serviceType: string;
   budget: string;
+  whatsappContact: string;
   description: string;
-}
-
-export interface ApiSubmissionResponse {
-  success: boolean;
-  message: string;
 }

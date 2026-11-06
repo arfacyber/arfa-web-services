@@ -19,8 +19,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.siteUrl),
   title: {
-    default: "ARFA.DEV — Jasa Pembuatan Website Profesional & Modern",
-    template: "%s | ARFA.DEV",
+    default:
+      "ARFA.DEV Services — Jasa Pembuatan Website & Aplikasi Web Indonesia",
+    template: "%s | ARFA.DEV Services",
   },
   description: SITE_CONFIG.hero.subheadline,
   keywords: [...SITE_CONFIG.seoKeywords],
@@ -38,13 +39,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
     url: SITE_CONFIG.siteUrl,
-    siteName: SITE_CONFIG.brandName,
-    title: "ARFA.DEV — Build Your Digital Presence With ARFA.DEV",
+    siteName: SITE_CONFIG.productName,
+    title: "ARFA.DEV Services — Build Your Digital Presence With ARFA.DEV",
     description: SITE_CONFIG.hero.subheadline,
   },
   twitter: {
     card: "summary_large_image",
-    title: "ARFA.DEV — Jasa Pembuatan Website Profesional",
+    title: "ARFA.DEV Services — Jasa Pembuatan Website & Aplikasi Web",
     description: SITE_CONFIG.hero.subheadline,
   },
   robots: {

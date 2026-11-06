@@ -1,359 +1,463 @@
 import {
-  Building2,
   Rocket,
-  Briefcase,
-  ShoppingBag,
-  Cpu,
-  RefreshCw,
-  Sparkles,
-  Smartphone,
+  UserCheck,
+  Building2,
+  LayoutDashboard,
   Code2,
-  Gauge,
-  SearchCheck,
-  MessageSquareCode,
+  Wrench,
+  Smartphone,
+  Sliders,
+  FolderGit2,
+  MessageSquare,
+  BadgeCheck,
 } from "lucide-react";
 import type {
   NavItem,
-  ServiceItem,
-  PricingTier,
-  PortfolioSlot,
+  ServiceCategory,
+  PortfolioProject,
+  TechStackCategory,
   WhyChooseItem,
   ProcessStep,
   FaqItem,
 } from "@/types";
 
 export const SITE_CONFIG = {
+  productName: "ARFA.DEV Services",
   brandName: "ARFA.DEV",
   developerName: "Muhammad Arfadhia Rizqitamma Giari",
+  siteUrl:
+    process.env.NEXT_PUBLIC_SITE_URL || "https://services.wawansugianto.my.id",
   portfolioUrl: "https://wawansugianto.my.id",
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://arfa.dev",
-  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "6281359111799",
-  laravelApiUrl: process.env.NEXT_PUBLIC_LARAVEL_API_URL || "",
+  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "",
+  emailAddress: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "",
   hero: {
     headline: "Build Your Digital Presence With ARFA.DEV",
     subheadline:
-      "We create modern, responsive, and professional websites to help businesses grow in the digital world.",
-    primaryCta: "Start Your Project",
-    secondaryCta: "Explore My Portfolio",
+      "Kami membantu bisnis, organisasi, dan individu membangun website modern, responsif, dan sesuai kebutuhan.",
+    primaryCta: "Lihat Layanan",
+    secondaryCta: "Konsultasikan Proyek",
   },
+  pricingDisclaimer:
+    "Harga merupakan estimasi awal. Biaya akhir menyesuaikan kompleksitas, jumlah halaman, fitur, integrasi, dan kebutuhan proyek.",
+  pricingAdditionalNote:
+    "Biaya domain, hosting, layanan pihak ketiga, serta fitur tambahan dihitung terpisah jika diperlukan.",
   seoKeywords: [
+    "ARFA.DEV Services",
     "Jasa pembuatan website",
-    "Jasa website profesional",
+    "Jasa pembuatan website UMKM",
+    "Jasa pembuatan landing page murah",
+    "Jasa pembuatan company profile",
+    "Jasa pembuatan aplikasi web PHP Laravel",
     "Web developer Indonesia",
-    "Jasa pembuatan website bisnis",
-    "ARFA.DEV",
-    "Muhammad Arfadhia Rizqitamma Giari",
   ],
 } as const;
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Process", href: "#process" },
+  { label: "Layanan", href: "#services" },
+  { label: "Harga", href: "#pricing" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Teknologi", href: "#technologies" },
+  { label: "Proses", href: "#process" },
   { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
+  { label: "Kontak", href: "#contact" },
 ];
 
-export const SERVICES_DATA: ServiceItem[] = [
-  {
-    id: "company-profile",
-    title: "Company Profile Website",
-    description:
-      "Representasi digital resmi untuk membangun kredibilitas perusahaan, menampilkan profil korporasi, visi-misi, dan portofolio bisnis secara elegan.",
-    features: [
-      "Struktur multi-halaman profesional",
-      "Desain eksklusif sesuai identitas brand",
-      "Optimasi SEO on-page dasar",
-      "Integrasi kontak & peta lokasi",
-    ],
-    icon: Building2,
-  },
+export const SERVICE_CATEGORIES: ServiceCategory[] = [
   {
     id: "landing-page",
-    title: "Landing Page",
-    description:
-      "Halaman tunggal berfokus tinggi pada konversi untuk kampanye produk, peluncuran layanan baru, atau akuisisi prospek (leads).",
-    features: [
-      "Copywriting hierarchy yang terarah",
-      "Kecepatan muat halaman tinggi",
-      "Call-to-Action (CTA) strategis",
-      "Responsif di seluruh ukuran layar",
+    name: "Landing Page",
+    startingPrice: "Rp350.000",
+    shortDescription:
+      "Halaman promosi satu halaman (single-page) yang fokus menampilkan informasi produk, jasa, atau kegiatan secara ringkas dan terarah.",
+    targets: [
+      "Promosi produk",
+      "Promosi jasa",
+      "Acara dan kegiatan",
+      "Kampanye digital",
     ],
+    features: [
+      "Responsive design",
+      "Hero section",
+      "Informasi produk atau jasa",
+      "Call-to-action",
+      "Kontak WhatsApp",
+      "Basic SEO",
+    ],
+    estimatedDuration: "Estimasi 3 – 5 Hari Kerja",
+    deliverablesInfo:
+      "Cocok untuk pelaku usaha atau penyelenggara acara yang membutuhkan halaman informasi cepat dengan tombol arah langsung ke WhatsApp.",
     icon: Rocket,
   },
   {
-    id: "business-website",
-    title: "Business Website",
-    description:
-      "Solusi website komprehensif untuk operasional bisnis harian, katalog layanan, dan kanal informasi pelanggan yang terstruktur.",
+    id: "personal-portfolio",
+    name: "Personal Portfolio",
+    startingPrice: "Rp500.000",
+    shortDescription:
+      "Website profil personal untuk menampilkan rekam jejak karya, keahlian, dan kontak profesional secara rapi.",
+    targets: ["Programmer", "Pelajar", "Freelancer", "Profesional"],
     features: [
-      "Arsitektur informasi skalabel",
-      "Integrasi formulir konsultasi/pemesanan",
-      "Dokumentasi struktur pengelolaan",
-      "Standar keamanan web modern",
+      "Profil personal",
+      "About me",
+      "Skills",
+      "Portfolio projects",
+      "Contact section",
+      "Responsive design",
     ],
-    icon: Briefcase,
+    estimatedDuration: "Estimasi 4 – 7 Hari Kerja",
+    deliverablesInfo:
+      "Dirancang untuk membangun kredibilitas individu saat melamar pekerjaan, menawarkan jasa freelance, atau mendokumentasikan karya.",
+    icon: UserCheck,
   },
   {
-    id: "ecommerce-website",
-    title: "E-Commerce Website",
-    description:
-      "Platform katalog dan transaksi online yang dirancang untuk memudahkan pelanggan menjelajahi produk dan melakukan pemesanan.",
+    id: "company-profile",
+    name: "Company Profile",
+    startingPrice: "Rp750.000",
+    shortDescription:
+      "Website identitas resmi untuk memperkenalkan profil usaha, daftar layanan, dokumentasi kegiatan, dan kontak kepada publik.",
+    targets: ["UMKM", "Perusahaan", "Sekolah", "Organisasi", "Komunitas"],
     features: [
-      "Manajemen katalog & varian produk",
-      "Alur keranjang belanja intuitif",
-      "Siap diintegrasikan ke Payment/WhatsApp Checkout",
-      "Antarmuka mobile-first untuk pembeli",
+      "Homepage",
+      "About company",
+      "Services",
+      "Portfolio atau galeri",
+      "Contact information",
+      "WhatsApp integration",
+      "Responsive design",
     ],
-    icon: ShoppingBag,
+    estimatedDuration: "Estimasi 7 – 14 Hari Kerja",
+    deliverablesInfo:
+      "Pilihan ideal bagi UMKM, sekolah, maupun organisasi yang membutuhkan representasi digital resmi yang informatif dan mudah diakses.",
+    icon: Building2,
+    isRecommended: true,
   },
   {
-    id: "custom-web-app",
-    title: "Custom Web Application",
-    description:
-      "Pengembangan aplikasi berbasis web sesuai proses bisnis spesifik menggunakan arsitektur Next.js dan kesiapan backend Laravel REST API.",
-    features: [
-      "Arsitektur Frontend & REST API terpisah",
-      "Perancangan skema database MySQL",
-      "Sistem autentikasi & hak akses",
-      "Fitur kustom sesuai spesifikasi",
+    id: "web-application",
+    name: "Web Application",
+    startingPrice: "Rp1.500.000",
+    shortDescription:
+      "Aplikasi berbasis web untuk membantu pencatatan data, administrasi internal, dan pengelolaan operasional secara terstruktur.",
+    targets: [
+      "Sistem administrasi",
+      "Sistem manajemen data",
+      "Dashboard internal",
+      "Aplikasi pengelolaan operasional",
     ],
-    icon: Cpu,
-  },
-  {
-    id: "website-redesign",
-    title: "Website Redesign",
-    description:
-      "Pembaruan menyeluruh tampilan, struktur kode, dan performa website lama Anda agar relevan dengan standar UI/UX dan perangkat saat ini.",
     features: [
-      "Audit UI/UX dan performa website lama",
-      "Modernisasi antarmuka & tipografi",
-      "Peningkatan responsivitas mobile",
-      "Refactoring ke teknologi web modern",
-    ],
-    icon: RefreshCw,
-  },
-];
-
-/**
- * KONFIGURASI PAKET HARGA
- * Ubah nilai `startingPrice` sesuai kebijakan harga resmi Anda.
- * Tidak menggunakan angka karangan agar tetap transparan.
- */
-export const PRICING_DATA: PricingTier[] = [
-  {
-    id: "starter",
-    name: "Starter",
-    tagline: "Solusi esensial untuk kehadiran digital pertama dan kampanye terfokus.",
-    priceLabel: "Starting from",
-    startingPrice: "Custom Rate — Tier 1",
-    priceNote: "Disesuaikan dengan kompleksitas bagian & aset konten",
-    features: [
-      "Landing Page",
-      "Responsive Design",
-      "Basic SEO",
-      "Contact Integration",
-    ],
-    isHighlighted: false,
-  },
-  {
-    id: "professional",
-    name: "Professional",
-    tagline: "Dirancang untuk bisnis yang membutuhkan struktur multi-halaman & kredibilitas penuh.",
-    priceLabel: "Starting from",
-    startingPrice: "Custom Rate — Tier 2",
-    priceNote: "Scope ditentukan berdasarkan jumlah halaman & modul",
-    features: [
-      "Multi-page Website",
-      "Modern UI/UX",
-      "SEO Optimization",
-      "Admin Dashboard (jika termasuk dalam scope)",
-    ],
-    isHighlighted: true,
-  },
-  {
-    id: "custom",
-    name: "Custom",
-    tagline: "Sistem aplikasi web terintegrasi dengan kebutuhan logika bisnis dan basis data khusus.",
-    priceLabel: "Starting from",
-    startingPrice: "Berdasarkan Spesifikasi",
-    priceNote: "Estimasi dihitung setelah analisis kebutuhan teknis",
-    features: [
-      "Custom Web Application",
-      "Database Integration",
       "Authentication",
-      "Custom Features",
+      "Dashboard",
+      "CRUD management",
+      "Database integration",
+      "Role-based access sesuai kebutuhan",
+      "Admin panel",
+      "Responsive interface",
     ],
-    isHighlighted: false,
+    estimatedDuration: "Estimasi 2 – 4 Minggu (Menyesuaikan Fitur)",
+    deliverablesInfo:
+      "Cakupan fitur dasar dan struktur tabel database disesuaikan dengan alur administrasi yang disepakati pada tahap analisis kebutuhan.",
+    icon: LayoutDashboard,
+  },
+  {
+    id: "custom-web-development",
+    name: "Custom Web Development",
+    startingPrice: "Berdasarkan Kebutuhan",
+    shortDescription:
+      "Pengembangan sistem web dengan alur kerja khusus, penambahan fitur spesifik, atau integrasi API di luar paket standar.",
+    targets: [
+      "Sistem informasi khusus",
+      "Integrasi API",
+      "Pengembangan fitur tambahan",
+      "Aplikasi web sesuai kebutuhan bisnis",
+    ],
+    features: [
+      "Analisis alur kerja khusus",
+      "Perancangan skema database sesuai proses bisnis",
+      "Pengembangan backend (PHP / Laravel) atau frontend modern",
+      "Integrasi layanan/API pihak ketiga bila diperlukan",
+      "Dokumentasi penggunaan sistem",
+    ],
+    estimatedDuration: "Menyesuaikan Ruang Lingkup Proyek",
+    deliverablesInfo:
+      "Biaya dan jadwal pengerjaan ditentukan setelah diskusi rincian teknis dan ruang lingkup fitur yang ingin dibangun.",
+    icon: Code2,
+  },
+  {
+    id: "website-maintenance",
+    name: "Website Maintenance",
+    startingPrice: "Rp100.000",
+    priceUnit: "/bulan",
+    shortDescription:
+      "Layanan pemeliharaan berkala untuk menjaga website tetap berjalan baik, memperbarui konten, dan menangani kendala teknis ringan.",
+    targets: [
+      "Pemilik website aktif",
+      "UMKM & Organisasi",
+      "Website sekolah / komunitas",
+      "Klien yang membutuhkan bantuan teknis rutin",
+    ],
+    features: [
+      "Pemeriksaan website",
+      "Perbaikan bug ringan",
+      "Pembaruan konten",
+      "Pemeriksaan fungsi",
+      "Bantuan teknis dasar",
+    ],
+    estimatedDuration: "Layanan Bulanan (Batas pekerjaan sesuai kesepakatan)",
+    deliverablesInfo:
+      "Batas pekerjaan dan jumlah pembaruan konten setiap bulan ditentukan secara jelas dalam kesepakatan awal.",
+    icon: Wrench,
   },
 ];
 
-/**
- * SLOT PORTFOLIO
- * Tidak mengklaim proyek fiktif. Seluruh kartu mengarahkan pengunjung
- * untuk memverifikasi karya asli langsung di https://wawansugianto.my.id
- * atau dapat Anda ganti langsung pada array di bawah ini.
- */
-export const PORTFOLIO_SLOTS: PortfolioSlot[] = [
+export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
-    id: "portfolio-verified-main",
-    title: "Verified Developer Portfolio & Case Studies",
-    category: "Official Portfolio Portal",
+    id: "ecoguard",
+    title: "EcoGuard",
+    category: "Environmental & Educational Web",
     description:
-      "Lihat daftar proyek nyata, eksperimen teknis, dan implementasi antarmuka yang telah dikerjakan langsung melalui portal portfolio utama.",
-    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Laravel"],
-    externalUrl: "https://wawansugianto.my.id",
-    isPlaceholder: false,
+      "Website bertema lingkungan yang menyajikan konten edukasi pelestarian alam dengan antarmuka interaktif dan responsif.",
+    imagePath: "/images/portfolio/ecoguar.png",
+    techStack: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS"],
+    keyFeatures: [
+      "Materi edukasi lingkungan terstruktur",
+      "Komponen interaksi pengguna",
+      "Tata letak responsif mobile & desktop",
+    ],
+    demoUrl: "https://ecoguard.id",
+    statusLabel: "Live Demo Tersedia",
   },
   {
-    id: "slot-custom-1",
-    title: "Project Slot #01 — Configurable Showcase",
-    category: "Web Architecture Slot",
+    id: "ascenso",
+    title: "Ascenso",
+    category: "Modern Class & Community Web",
     description:
-      "Slot ini disiapkan secara transparan pada src/config/site.ts agar dapat diisi dengan studi kasus klien terbaru tanpa perlu mengubah kode komponen.",
-    techStack: ["Responsive UI", "Clean Architecture", "SEO Ready"],
-    externalUrl: "https://wawansugianto.my.id",
-    isPlaceholder: true,
+      "Website yang dikembangkan dengan tampilan modern untuk menyajikan profil, informasi kegiatan, dan struktur anggota secara elegan.",
+    imagePath: "/images/portfolio/ascenso.png",
+    techStack: ["HTML5", "Tailwind CSS", "JavaScript"],
+    keyFeatures: [
+      "Desain antarmuka modern & bersih",
+      "Navigasi informasi terstruktur",
+      "Optimal di perangkat mobile",
+    ],
+    demoUrl: "https://ascenso-class.pages.dev",
+    statusLabel: "Live Demo Tersedia",
   },
   {
-    id: "slot-custom-2",
-    title: "Project Slot #02 — Configurable Showcase",
-    category: "Web Application Slot",
+    id: "laundry-management-system",
+    title: "Laundry Management System",
+    category: "Web Application",
     description:
-      "Slot ini disiapkan secara transparan pada src/config/site.ts untuk menampilkan dokumentasi proyek berikutnya atau diarahkan ke portfolio utama.",
-    techStack: ["REST API Ready", "Modern Frontend", "Performance"],
-    externalUrl: "https://wawansugianto.my.id",
-    isPlaceholder: true,
+      "Aplikasi manajemen laundry untuk membantu pencatatan transaksi pelanggan, status cucian, administrasi layanan, dan pengelolaan data operasional.",
+    imagePath: "/images/portfolio/laundry.png",
+    techStack: ["PHP", "Laravel", "MySQL", "Tailwind CSS"],
+    keyFeatures: [
+      "Dashboard ringkasan operasional",
+      "Manajemen data pelanggan & paket cucian (CRUD)",
+      "Pencatatan status transaksi & laporan administrasi",
+    ],
+    statusLabel: "Proyek Aplikasi Internal",
+  },
+  {
+    id: "smp-budi-utomo-photobook",
+    title: "SMP Budi Utomo Photobook",
+    category: "School Documentation Website",
+    description:
+      "Website dokumentasi dan photobook digital sekolah untuk menampilkan galeri kenangan siswa, profil angkatan, dan momen kegiatan sekolah.",
+    imagePath: "/images/portfolio/photobook.jpg",
+    techStack: ["HTML5", "CSS3", "JavaScript"],
+    keyFeatures: [
+      "Galeri foto angkatan & kegiatan sekolah",
+      "Tampilan kartu profil yang rapi",
+      "Desain responsif yang mudah diakses siswa & alumni",
+    ],
+    statusLabel: "Dokumentasi Proyek Sekolah",
+  },
+  {
+    id: "absensi-siswa",
+    title: "Absensi Siswa",
+    category: "School Information System",
+    description:
+      "Aplikasi pencatatan kehadiran siswa berbasis web yang dibangun menggunakan PHP, koneksi database PDO, dan penyimpanan MySQL.",
+    imagePath: "/images/portfolio/absensi.jpg",
+    techStack: ["PHP", "PDO", "MySQL", "CSS3", "JavaScript"],
+    keyFeatures: [
+      "Autentikasi pengguna / pengelola",
+      "Input dan pengelolaan data kehadiran siswa",
+      "Rekapitulasi data absensi terintegrasi database MySQL",
+    ],
+    statusLabel: "Sistem Aplikasi Akademik",
+  },
+];
+
+export const TECH_STACK_CATEGORIES: TechStackCategory[] = [
+  {
+    id: "frontend",
+    categoryName: "Frontend Development",
+    description:
+      "Teknologi untuk membangun tampilan website yang responsif, modern, dan nyaman diakses di berbagai perangkat.",
+    items: [
+      { name: "HTML5", role: "Struktur semantik halaman web" },
+      { name: "CSS3", role: "Penataan gaya & animasi antarmuka" },
+      { name: "JavaScript", role: "Interaktivitas sisi klien (Client-side)" },
+      { name: "Tailwind CSS", role: "Utility-first CSS framework modern" },
+      { name: "Next.js", role: "Framework React untuk web modern & SEO" },
+      { name: "TypeScript", role: "Penulisan kode dengan tipe data terstruktur" },
+    ],
+  },
+  {
+    id: "backend",
+    categoryName: "Backend Development",
+    description:
+      "Pemrosesan logika sistem, manajemen autentikasi, pengelolaan data, serta pengembangan kemampuan Laravel REST API.",
+    items: [
+      { name: "PHP", role: "Bahasa pemrograman server-side aplikasi web" },
+      {
+        name: "Laravel",
+        role: "Framework PHP untuk aplikasi web & pengembangan REST API",
+      },
+    ],
+  },
+  {
+    id: "database",
+    categoryName: "Database Management",
+    description:
+      "Penyimpanan dan pengelolaan data relasional secara terstruktur untuk kebutuhan aplikasi web.",
+    items: [
+      { name: "MySQL", role: "Relational Database Management System (RDBMS)" },
+    ],
+  },
+  {
+    id: "tools",
+    categoryName: "Development Tools",
+    description:
+      "Perangkat pendukung manajemen versi kode, bundling aset, dan pengujian server lokal.",
+    items: [
+      { name: "Git", role: "Version control system" },
+      { name: "GitHub", role: "Manajemen repositori & kolaborasi kode" },
+      { name: "Vite", role: "Frontend build tool yang cepat" },
+      { name: "XAMPP", role: "Lingkungan server lokal PHP & MySQL" },
+    ],
   },
 ];
 
 export const WHY_CHOOSE_DATA: WhyChooseItem[] = [
   {
-    id: "modern-design",
-    title: "Modern Design",
+    id: "responsive-design",
+    title: "Desain Responsif",
     description:
-      "Pendekatan visual minimalis dengan hierarki tipografi tegas, kontras terukur, dan tata letak berstandar agensi teknologi modern.",
-    icon: Sparkles,
-  },
-  {
-    id: "responsive-website",
-    title: "Responsive Website",
-    description:
-      "Tampilan beradaptasi secara presisi di layar desktop, tablet, maupun smartphone untuk memastikan kenyamanan akses seluruh pengunjung.",
+      "Tampilan website disesuaikan agar tetap rapi dan nyaman digunakan baik melalui layar smartphone, tablet, maupun komputer desktop.",
     icon: Smartphone,
   },
   {
-    id: "clean-code",
-    title: "Clean Code",
+    id: "custom-fit",
+    title: "Pengembangan Sesuai Kebutuhan",
     description:
-      "Kode ditulis secara modular menggunakan TypeScript dan komponen terstruktur sehingga mudah dipelihara dan dikembangkan di masa depan.",
-    icon: Code2,
+      "Pemilihan teknologi dan fitur disesuaikan dengan tujuan proyek Anda—mulai dari landing page sederhana hingga aplikasi administrasi berbasis PHP/Laravel.",
+    icon: Sliders,
   },
   {
-    id: "performance-optimization",
-    title: "Performance Optimization",
+    id: "organized-code",
+    title: "Struktur Kode Terorganisasi",
     description:
-      "Optimasi aset, pemuatan komponen efisien, dan arsitektur Next.js untuk menjaga waktu muat halaman tetap cepat dan stabil.",
-    icon: Gauge,
+      "Penulisan kode disusun secara rapi dan terstruktur agar website lebih mudah dikelola atau dikembangkan kembali di kemudian hari.",
+    icon: FolderGit2,
   },
   {
-    id: "seo-friendly",
-    title: "SEO Friendly",
+    id: "clear-communication",
+    title: "Komunikasi Proyek yang Jelas",
     description:
-      "Implementasi Semantic HTML, struktur metadata lengkap, Open Graph, Sitemap XML, dan Schema.org agar mudah dikenali mesin pencari.",
-    icon: SearchCheck,
+      "Diskusi kebutuhan, penyampaian progres pengerjaan, hingga tahapan revisi dilakukan secara langsung dan mudah dipahami.",
+    icon: MessageSquare,
   },
   {
-    id: "direct-communication",
-    title: "Direct Communication",
+    id: "transparent-pricing",
+    title: "Informasi Harga Transparan",
     description:
-      "Komunikasi teknis dan diskusi kebutuhan dilakukan secara langsung dengan developer tanpa perantara berlapis yang menghambat keputusan.",
-    icon: MessageSquareCode,
+      "Estimasi biaya awal, cakupan fitur dasar, serta rincian biaya tambahan (seperti domain atau fitur ekstra) dijelaskan di awal sebelum pengerjaan dimulai.",
+    icon: BadgeCheck,
   },
 ];
 
 export const PROCESS_STEPS: ProcessStep[] = [
   {
     number: "01",
-    title: "Consultation",
+    title: "Konsultasi Kebutuhan",
     description:
-      "Diskusi awal untuk memahami tujuan bisnis, target audiens, referensi visual, serta cakupan fitur yang dibutuhkan.",
-    deliverable: "Ringkasan Kebutuhan & Scope Proyek",
+      "Calon pelanggan menyampaikan tujuan pembuatan website, referensi tampilan, serta fitur yang dibutuhkan melalui WhatsApp atau formulir konsultasi.",
+    deliverable: "Catatan Kebutuhan Proyek",
   },
   {
     number: "02",
-    title: "Planning",
+    title: "Analisis dan Penawaran",
     description:
-      "Penyusunan struktur halaman (sitemap), alur navigasi pengguna, serta pemilihan spesifikasi teknis yang paling tepat.",
-    deliverable: "Wireframe Konseptual & Jadwal Pengerjaan",
+      "Kami menganalisis kompleksitas halaman/fitur dan memberikan rincian estimasi biaya, waktu pengerjaan, serta ruang lingkup kerja yang disepakati.",
+    deliverable: "Rincian Fitur & Penawaran Harga",
   },
   {
     number: "03",
-    title: "UI/UX Design",
+    title: "Desain dan Pengembangan",
     description:
-      "Perancangan antarmuka visual berfokus pada kejelasan informasi, estetika brand, dan kemudahan interaksi di berbagai perangkat.",
-    deliverable: "Desain Antarmuka Beresolusi Tinggi",
+      "Proses pembuatan tata letak antarmuka dan penulisan kode program sesuai spesifikasi layanan yang telah disetujui.",
+    deliverable: "Progres Website / Aplikasi Web",
   },
   {
     number: "04",
-    title: "Development",
+    title: "Testing dan Revisi Sesuai Kesepakatan",
     description:
-      "Implementasi desain ke dalam kode produksi menggunakan Next.js, TypeScript, Tailwind CSS, serta integrasi API bila diperlukan.",
-    deliverable: "Staging Website Interaktif",
+      "Pemeriksaan fungsi halaman, uji tampilan di perangkat mobile/desktop, serta penyesuaian revisi berdasarkan ruang lingkup kesepakatan.",
+    deliverable: "Website Teruji & Siap Rilis",
   },
   {
     number: "05",
-    title: "Testing",
+    title: "Deployment dan Serah Terima",
     description:
-      "Pengujian menyeluruh mencakup responsivitas layar, fungsi formulir/navigasi, kecepatan muat, dan validasi struktur SEO.",
-    deliverable: "Laporan Kualitas & Revisi Terverifikasi",
-  },
-  {
-    number: "06",
-    title: "Deployment",
-    description:
-      "Peluncuran website ke server produksi, konfigurasi domain/SSL, serta serah terima akses dan panduan penggunaan.",
-    deliverable: "Website Live & Dokumentasi Serah Terima",
+      "Peluncuran website ke domain/hosting yang disiapkan serta penyerahan akses atau panduan penggunaan kepada pelanggan.",
+    deliverable: "Website Online & Serah Terima",
   },
 ];
 
 export const FAQ_DATA: FaqItem[] = [
   {
-    question: "Berapa lama pembuatan website?",
+    question: "Berapa biaya pembuatan website?",
     answer:
-      "Durasi pengerjaan bergantung pada kompleksitas halaman, kesiapan materi konten dari klien, dan fitur yang disepakati. Landing page memiliki waktu pengerjaan lebih singkat dibandingkan website multi-halaman atau aplikasi web kustom. Estimasi jadwal rinci diberikan pada tahap Planning setelah ruang lingkup proyek jelas.",
+      "Biaya pembuatan website menggunakan sistem Starting From (mulai dari): Landing Page mulai Rp350.000, Personal Portfolio mulai Rp500.000, Company Profile mulai Rp750.000, Web Application mulai Rp1.500.000, dan Website Maintenance mulai Rp100.000/bulan. Biaya akhir menyesuaikan jumlah halaman, tingkat kerumitan fitur, dan kebutuhan proyek.",
   },
   {
-    question: "Apakah website bisa dibuka di HP?",
+    question: "Apakah harga bisa disesuaikan?",
     answer:
-      "Ya. Seluruh website yang dikembangkan oleh ARFA.DEV menerapkan pendekatan Responsive Design sehingga tata letak, teks, dan tombol navigasi menyesuaikan secara optimal di smartphone, tablet, laptop, maupun monitor desktop.",
+      "Bisa. Anda dapat mendiskusikan anggaran dan prioritas fitur yang paling dibutuhkan terlebih dahulu. Kami akan membantu menyesuaikan cakupan halaman atau modul fitur agar selaras dengan kebutuhan dan anggaran Anda.",
   },
   {
-    question: "Apakah tersedia domain dan hosting?",
+    question: "Berapa lama pengerjaan?",
     answer:
-      "Pengadaan domain dan layanan hosting/server dapat disertakan dalam paket kesepakatan atau menggunakan akun infrastruktur milik Anda sendiri. Kami akan membantu proses konfigurasi DNS dan deployment hingga website dapat diakses publik dengan aman (HTTPS/SSL).",
+      "Waktu pengerjaan bergantung pada jenis layanan dan kesiapan materi (teks/foto) dari pelanggan. Sebagai gambaran awal, Landing Page berkisar 3–5 hari kerja, Personal Portfolio 4–7 hari kerja, Company Profile 7–14 hari kerja, dan Web Application mulai dari 2–4 minggu sesuai kompleksitas fitur.",
   },
   {
-    question: "Apakah website bisa dikelola sendiri?",
+    question: "Apakah bisa menggunakan domain sendiri?",
     answer:
-      "Bergantung pada paket dan spesifikasi proyek yang Anda pilih. Untuk website statis/landing page, pembaruan konten dapat dilakukan melalui konfigurasi terstruktur, sedangkan untuk proyek yang mencakup Admin Dashboard atau CMS pada scope pengerjaan, Anda dapat memperbarui data secara mandiri melalui panel admin.",
+      "Sangat bisa. Jika Anda sudah memiliki domain atau layanan hosting sendiri, kami dapat membantu menghubungkannya. Jika belum memiliki, biaya pembelian domain dan sewa hosting akan dihitung secara terpisah dan transparan sesuai ekstensi domain (.com, .id, .my.id, dll.) yang Anda pilih.",
   },
   {
-    question: "Apakah tersedia maintenance?",
+    question: "Apakah tersedia layanan maintenance?",
     answer:
-      "Tersedia opsi dukungan pemeliharaan (maintenance) berdasarkan kesepakatan, mencakup pembaruan berkala, pemantauan ketersediaan sistem, perbaikan bug teknis, maupun penambahan bagian halaman baru seiring perkembangan bisnis Anda.",
+      "Ya, tersedia layanan Website Maintenance mulai dari Rp100.000/bulan yang mencakup pemeriksaan website berkala, perbaikan bug ringan, pembaruan konten, pemeriksaan fungsi, dan bantuan teknis dasar sesuai batas pekerjaan yang disepakati.",
+  },
+  {
+    question: "Apakah bisa membuat aplikasi web custom?",
+    answer:
+      "Bisa. Melalui layanan Web Application dan Custom Web Development, kami melayani pembuatan sistem informasi khusus, aplikasi administrasi berbasis PHP/Laravel & MySQL, dashboard pengelolaan data, maupun penambahan fitur khusus.",
   },
   {
     question: "Bagaimana proses pembayaran?",
     answer:
-      "Skema pembayaran dilakukan secara bertahap dan transparan berdasarkan pencapaian tahap pengerjaan (milestone), dimulai dari uang muka (down payment) saat kesepakatan proyek dan pelunasan setelah tahapan pengujian selesai sebelum serah terima penuh.",
+      "Pembayaran dilakukan secara bertahap. Setelah ruang lingkup fitur dan estimasi biaya disepakati, pengerjaan dimulai setelah pembayaran uang muka (DP). Pelunasan dilakukan setelah website selesai diuji dan siap diserahterimakan.",
   },
 ];
 
 export const BUDGET_OPTIONS = [
-  "Belum ditentukan (Butuh konsultasi estimasi)",
-  "Skala Starter / Landing Page",
-  "Skala Professional / Multi-Page",
-  "Skala Custom Web Application",
+  "Mulai Rp350.000 – Rp500.000 (Landing Page / Portfolio Dasar)",
+  "Rp500.000 – Rp1.000.000 (Portfolio / Company Profile)",
+  "Rp1.000.000 – Rp2.500.000 (Company Profile Lengkap / Web App Dasar)",
+  "Di atas Rp2.500.000 (Web Application / Custom System)",
+  "Layanan Maintenance Bulanan (Mulai Rp100.000/bulan)",
+  "Belum ditentukan (Ingin diskusi estimasi biaya terlebih dahulu)",
 ];

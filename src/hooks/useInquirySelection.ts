@@ -5,7 +5,7 @@ import { useEffect } from "react";
 const INQUIRY_EVENT_NAME = "arfa:select-inquiry";
 
 export interface InquirySelectionDetail {
-  websiteType?: string;
+  serviceType?: string;
   budget?: string;
 }
 
