@@ -11,6 +11,10 @@ import { ProcessSection } from "@/sections/ProcessSection";
 import { FaqSection } from "@/sections/FaqSection";
 import { ContactSection } from "@/sections/ContactSection";
 
+export function generateStaticParams() {
+  return [];
+}
+
 export default function HomePage() {
   return (
     <>

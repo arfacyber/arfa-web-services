@@ -38,6 +38,7 @@ export interface TechStackCategory {
   items: {
     name: string;
     role: string;
+    status?: "mastered" | "learning";
   }[];
 }
 

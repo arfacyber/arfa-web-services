@@ -96,7 +96,7 @@ export function Footer() {
         <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row">
           <p>© 2026 ARFA.DEV Services. All Rights Reserved.</p>
           <p className="font-mono text-slate-400">
-            HTML5 • Tailwind CSS • Next.js • PHP • Laravel • MySQL
+            HTML • Tailwind CSS • JavaScript • PHP • Laravel • MySQL
           </p>
         </div>
       </div>

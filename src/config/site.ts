@@ -38,9 +38,9 @@ export const SITE_CONFIG = {
     secondaryCta: "Konsultasikan Proyek",
   },
   pricingDisclaimer:
-    "Harga merupakan estimasi awal. Biaya akhir menyesuaikan kompleksitas, jumlah halaman, fitur, integrasi, dan kebutuhan proyek.",
+    "Harga merupakan estimasi awal. Harga akhir bergantung pada kompleksitas dan kebutuhan fitur.",
   pricingAdditionalNote:
-    "Biaya domain, hosting, layanan pihak ketiga, serta fitur tambahan dihitung terpisah jika diperlukan.",
+    "Domain, hosting, dan biaya layanan pihak ketiga dihitung terpisah.",
   seoKeywords: [
     "ARFA.DEV Services",
     "Jasa pembuatan website",
@@ -215,24 +215,24 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     category: "Environmental & Educational Web",
     description:
       "Website bertema lingkungan yang menyajikan konten edukasi pelestarian alam dengan antarmuka interaktif dan responsif.",
-    imagePath: "/images/portfolio/ecoguar.png",
+    imagePath: "/images/portfolio/ecoguard.png",
     techStack: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS"],
     keyFeatures: [
       "Materi edukasi lingkungan terstruktur",
       "Komponen interaksi pengguna",
       "Tata letak responsif mobile & desktop",
     ],
-    demoUrl: "https://ecoguard.id",
+    demoUrl: "https://ecoguard.wawansugianto.my.id",
     statusLabel: "Live Demo Tersedia",
   },
   {
     id: "ascenso",
-    title: "Ascenso",
+    title: "Ascenso Class",
     category: "Modern Class & Community Web",
     description:
       "Website yang dikembangkan dengan tampilan modern untuk menyajikan profil, informasi kegiatan, dan struktur anggota secara elegan.",
     imagePath: "/images/portfolio/ascenso.png",
-    techStack: ["HTML5", "Tailwind CSS", "JavaScript"],
+    techStack: ["HTML", "Tailwind CSS", "JavaScript"],
     keyFeatures: [
       "Desain antarmuka modern & bersih",
       "Navigasi informasi terstruktur",
@@ -242,47 +242,17 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     statusLabel: "Live Demo Tersedia",
   },
   {
-    id: "laundry-management-system",
-    title: "Laundry Management System",
-    category: "Web Application",
-    description:
-      "Aplikasi manajemen laundry untuk membantu pencatatan transaksi pelanggan, status cucian, administrasi layanan, dan pengelolaan data operasional.",
-    imagePath: "/images/portfolio/laundry.png",
-    techStack: ["PHP", "Laravel", "MySQL", "Tailwind CSS"],
-    keyFeatures: [
-      "Dashboard ringkasan operasional",
-      "Manajemen data pelanggan & paket cucian (CRUD)",
-      "Pencatatan status transaksi & laporan administrasi",
-    ],
-    statusLabel: "Proyek Aplikasi Internal",
-  },
-  {
-    id: "smp-budi-utomo-photobook",
-    title: "SMP Budi Utomo Photobook",
-    category: "School Documentation Website",
-    description:
-      "Website dokumentasi dan photobook digital sekolah untuk menampilkan galeri kenangan siswa, profil angkatan, dan momen kegiatan sekolah.",
-    imagePath: "/images/portfolio/photobook.jpg",
-    techStack: ["HTML5", "CSS3", "JavaScript"],
-    keyFeatures: [
-      "Galeri foto angkatan & kegiatan sekolah",
-      "Tampilan kartu profil yang rapi",
-      "Desain responsif yang mudah diakses siswa & alumni",
-    ],
-    statusLabel: "Dokumentasi Proyek Sekolah",
-  },
-  {
     id: "absensi-siswa",
     title: "Absensi Siswa",
     category: "School Information System",
     description:
-      "Aplikasi pencatatan kehadiran siswa berbasis web yang dibangun menggunakan PHP, koneksi database PDO, dan penyimpanan MySQL.",
-    imagePath: "/images/portfolio/absensi.jpg",
-    techStack: ["PHP", "PDO", "MySQL", "CSS3", "JavaScript"],
+      "Aplikasi pencatatan kehadiran siswa berbasis web yang dibangun menggunakan PHP, dan penyimpanan MySQL.",
+    imagePath: "/images/portfolio/absensi.png",
+    techStack: ["PHP", "MySQL", "CSS", "JavaScript"],
     keyFeatures: [
       "Autentikasi pengguna / pengelola",
       "Input dan pengelolaan data kehadiran siswa",
-      "Rekapitulasi data absensi terintegrasi database MySQL",
+      "Rekapitulasi data absensi terintegrasi database",
     ],
     statusLabel: "Sistem Aplikasi Akademik",
   },
@@ -293,48 +263,51 @@ export const TECH_STACK_CATEGORIES: TechStackCategory[] = [
     id: "frontend",
     categoryName: "Frontend Development",
     description:
-      "Teknologi untuk membangun tampilan website yang responsif, modern, dan nyaman diakses di berbagai perangkat.",
+      "Teknologi utama untuk membangun tata letak antarmuka, penataan gaya, dan interaktivitas website.",
     items: [
-      { name: "HTML5", role: "Struktur semantik halaman web" },
-      { name: "CSS3", role: "Penataan gaya & animasi antarmuka" },
+      { name: "HTML", role: "Struktur semantik halaman web" },
+      { name: "CSS", role: "Penataan gaya visual antarmuka" },
       { name: "JavaScript", role: "Interaktivitas sisi klien (Client-side)" },
-      { name: "Tailwind CSS", role: "Utility-first CSS framework modern" },
-      { name: "Next.js", role: "Framework React untuk web modern & SEO" },
-      { name: "TypeScript", role: "Penulisan kode dengan tipe data terstruktur" },
+      { name: "Blade", role: "Laravel templating engine" },
+      { name: "Tailwind CSS", role: "Utility-first CSS framework" },
+      { name: "Alpine.js", role: "Lightweight JavaScript framework" },
+      { name: "Next.js", role: "React Framework untuk web modern", status: "learning" },
     ],
   },
   {
     id: "backend",
     categoryName: "Backend Development",
     description:
-      "Pemrosesan logika sistem, manajemen autentikasi, pengelolaan data, serta pengembangan kemampuan Laravel REST API.",
+      "Pemrosesan logika sistem, manajemen autentikasi, dan pengaturan hak akses pengguna secara dinamis.",
     items: [
-      { name: "PHP", role: "Bahasa pemrograman server-side aplikasi web" },
-      {
-        name: "Laravel",
-        role: "Framework PHP untuk aplikasi web & pengembangan REST API",
-      },
+      { name: "PHP", role: "Bahasa pemrograman server-side utama" },
+      { name: "Laravel", role: "Framework PHP untuk arsitektur aplikasi web" },
+      { name: "Eloquent ORM", role: "Object-Relational Mapping (ORM) dinamis" },
+      { name: "Authentication", role: "Sistem keamanan login dan registrasi" },
+      { name: "Role-Based Access Control (RBAC)", role: "Manajemen hak akses pengguna" },
     ],
   },
   {
     id: "database",
-    categoryName: "Database Management",
+    categoryName: "Database",
     description:
-      "Penyimpanan dan pengelolaan data relasional secara terstruktur untuk kebutuhan aplikasi web.",
+      "Penyimpanan dan pengelolaan data relasional secara terstruktur, aman, dan mudah dimodifikasi.",
     items: [
       { name: "MySQL", role: "Relational Database Management System (RDBMS)" },
+      { name: "Database Migrations", role: "Pengelolaan versi skema database (Laravel)" },
+      { name: "Relational Data Modeling", role: "Pemodelan hubungan antar entitas data" },
     ],
   },
   {
     id: "tools",
     categoryName: "Development Tools",
     description:
-      "Perangkat pendukung manajemen versi kode, bundling aset, dan pengujian server lokal.",
+      "Perangkat pendukung manajemen versi kode, pengaturan repositori, bundling, dan pengujian server lokal.",
     items: [
       { name: "Git", role: "Version control system" },
-      { name: "GitHub", role: "Manajemen repositori & kolaborasi kode" },
-      { name: "Vite", role: "Frontend build tool yang cepat" },
-      { name: "XAMPP", role: "Lingkungan server lokal PHP & MySQL" },
+      { name: "GitHub", role: "Manajemen repositori & kolaborasi" },
+      { name: "Vite", role: "Frontend build tool modern" },
+      { name: "XAMPP", role: "Lingkungan server lokal (PHP, MySQL, Apache)" },
     ],
   },
 ];
@@ -456,7 +429,7 @@ export const FAQ_DATA: FaqItem[] = [
 export const BUDGET_OPTIONS = [
   "Mulai Rp350.000 – Rp500.000 (Landing Page / Portfolio Dasar)",
   "Rp500.000 – Rp1.000.000 (Portfolio / Company Profile)",
-  "Rp1.000.000 – Rp2.500.000 (Company Profile Lengkap / Web App Dasar)",
+  "Rp1.000.000 – Rp2.500.000 (Company Profile / Web App)",
   "Di atas Rp2.500.000 (Web Application / Custom System)",
   "Layanan Maintenance Bulanan (Mulai Rp100.000/bulan)",
   "Belum ditentukan (Ingin diskusi estimasi biaya terlebih dahulu)",

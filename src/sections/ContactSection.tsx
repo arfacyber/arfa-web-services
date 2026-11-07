@@ -1,6 +1,6 @@
-"use client";
+\"use client\";
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import {
   MessageCircle,
   Mail,
@@ -29,6 +29,11 @@ export function ContactSection() {
   });
 
   const [selectedNotice, setSelectedNotice] = useState<string | null>(null);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const handleExternalSelection = useCallback(
     (detail: { serviceType?: string; budget?: string }) => {
@@ -57,7 +62,7 @@ export function ContactSection() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const whatsappUrl = buildWhatsAppUrl(SITE_CONFIG.whatsappNumber, formData);
+  const whatsappUrl = isClient ? buildWhatsAppUrl(SITE_CONFIG.whatsappNumber, formData) : null;
   const messagePreview = generateWhatsAppMessage(formData);
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -79,7 +84,7 @@ export function ContactSection() {
         />
 
         <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-12">
-          {/* Panel Informasi & Preview Pesan Otomatis */}
+          {/* Panel Informasi */}
           <div className="space-y-6 lg:col-span-5">
             <div className="rounded-2xl border border-white/10 bg-navy-900/80 p-6">
               <h3 className="text-lg font-bold text-white">
@@ -132,7 +137,7 @@ export function ContactSection() {
                 </div>
               </div>
 
-              {/* Pratinjau Pesan WhatsApp Otomatis */}
+              {/* Preview Pesan */}
               <div className="mt-6 border-t border-white/10 pt-5">
                 <span className="block font-mono text-xs uppercase text-cyan-400">
                   Preview Pesan WhatsApp Otomatis:
@@ -144,7 +149,7 @@ export function ContactSection() {
             </div>
           </div>
 
-          {/* Formulir Order & Konsultasi */}
+          {/* Form */}
           <div className="lg:col-span-7">
             <form
               onSubmit={handleFormSubmit}
@@ -284,7 +289,7 @@ export function ContactSection() {
               </div>
 
               <div className="mt-6">
-                {whatsappUrl ? (
+                {isClient && whatsappUrl ? (
                   <button
                     type="submit"
                     className="inline-flex w-full items-center justify-center gap-2.5 rounded-xl bg-emerald-500 px-6 py-3.5 text-sm font-bold text-navy-950 shadow-lg shadow-emerald-500/20 transition hover:bg-emerald-400"
@@ -292,20 +297,14 @@ export function ContactSection() {
                     <MessageCircle className="h-5 w-5" />
                     <span>Lanjutkan Konsultasi ke WhatsApp</span>
                   </button>
-                ) : (
+                ) : isClient ? (
                   <div className="flex items-start gap-2.5 rounded-xl border border-amber-400/30 bg-amber-400/10 p-4 text-xs text-amber-200">
                     <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" />
                     <span>
-                      Pastikan variabel{" "}
-                      <code className="font-mono">
-                        NEXT_PUBLIC_WHATSAPP_NUMBER
-                      </code>{" "}
-                      telah diisi pada file{" "}
-                      <code className="font-mono">.env.local</code> untuk
-                      mengaktifkan pengiriman ke WhatsApp.
+                      Sistem mendeteksi <strong>NEXT_PUBLIC_WHATSAPP_NUMBER</strong> belum diatur di file konfigurasi lingkungan Anda (<code className="font-mono">.env.local</code>). Mohon buat file tersebut atau hubungi developer.
                     </span>
                   </div>
-                )}
+                ) : null}
               </div>
             </form>
           </div>

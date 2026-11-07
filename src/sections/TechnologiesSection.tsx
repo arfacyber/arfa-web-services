@@ -1,4 +1,4 @@
-"use client";
+\"use client\";
 
 import React from "react";
 import { motion } from "framer-motion";
@@ -15,7 +15,7 @@ export function TechnologiesSection() {
         <SectionHeader
           badge="Technology Stack"
           title="Teknologi yang Kami Gunakan"
-          subtitle="Pemilihan teknologi disesuaikan dengan kebutuhan proyek Anda—mulai dari website statis yang ringan hingga aplikasi web dinamis berbasis PHP, Laravel, dan MySQL."
+          subtitle="Daftar keahlian teknologi disinkronisasikan secara akurat dengan kompetensi pada portfolio utama ARFA.DEV."
         />
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -39,9 +39,16 @@ export function TechnologiesSection() {
                     key={tech.name}
                     className="rounded-xl border border-white/10 bg-navy-950/80 p-3.5 transition hover:border-cyan-500/40"
                   >
-                    <p className="font-mono text-sm font-bold text-cyan-400">
-                      {tech.name}
-                    </p>
+                    <div className="flex items-center justify-between">
+                      <p className="font-mono text-sm font-bold text-cyan-400">
+                        {tech.name}
+                      </p>
+                      {tech.status === "learning" && (
+                        <span className="rounded border border-amber-500/20 bg-amber-500/10 px-1.5 py-0.5 text-[9px] font-bold tracking-wider text-amber-400 uppercase">
+                          Learning
+                        </span>
+                      )}
+                    </div>
                     <p className="mt-1 text-xs leading-relaxed text-slate-300">
                       {tech.role}
                     </p>

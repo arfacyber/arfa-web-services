@@ -1,4 +1,4 @@
-"use client";
+\"use client\";
 
 import React from "react";
 import { motion } from "framer-motion";
@@ -12,7 +12,7 @@ export function WhyChooseSection() {
         <SectionHeader
           badge="Why Choose ARFA.DEV"
           title="Mengapa Memilih ARFA.DEV Services"
-          subtitle="Kami berfokus pada kejelasan informasi, kesesuaian fungsi website dengan kebutuhan pelanggan, serta komunikasi pengerjaan yang terarah."
+          subtitle="Kami berfokus pada kejelasan informasi, kesesuaian fungsi website dengan kebutuhan pelanggan, serta komunikasi pengerjaan yang transparan."
         />
 
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

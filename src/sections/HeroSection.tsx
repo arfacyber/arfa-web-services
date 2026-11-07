@@ -1,4 +1,4 @@
-"use client";
+\"use client\";
 
 import React from "react";
 import { motion } from "framer-motion";
@@ -167,7 +167,7 @@ export function HeroSection() {
                       Web &amp; UI
                     </p>
                     <p className="text-[10px] text-slate-400">
-                      HTML, Tailwind, Next.js
+                      HTML, Tailwind, JS
                     </p>
                   </div>
                   <div className="rounded-xl border border-white/10 bg-white/[0.03] p-2.5">

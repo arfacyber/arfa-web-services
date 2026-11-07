@@ -1,4 +1,4 @@
-"use client";
+\"use client\";
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
@@ -132,7 +132,7 @@ export function PricingSection() {
           ))}
         </div>
 
-        {/* Catatan Resmi Ketentuan Harga */}
+        {/* Pricing Disclaimer */}
         <div className="mt-10 rounded-2xl border border-cyan-500/30 bg-navy-900/80 p-5 sm:p-6">
           <div className="flex items-start gap-3.5">
             <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-cyan-400" />
@@ -141,15 +141,18 @@ export function PricingSection() {
                 Catatan Ketentuan Estimasi Harga:
               </p>
               <p>{SITE_CONFIG.pricingDisclaimer}</p>
-              <p className="text-xs text-slate-400">
+              <p className="text-slate-300">
                 {SITE_CONFIG.pricingAdditionalNote}
+              </p>
+              <p className="text-xs text-slate-400">
+                Kami tidak menjanjikan fitur tambahan di luar kesepakatan teknis yang telah dibuat pada tahap konsultasi.
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Modal Detail Layanan */}
+      {/* Detail Modal */}
       {selectedService && (
         <div
           role="dialog"
@@ -226,7 +229,7 @@ export function PricingSection() {
               </div>
 
               <p className="rounded-lg border border-white/10 bg-navy-950 p-3 text-xs text-slate-400">
-                {SITE_CONFIG.pricingDisclaimer}
+                {SITE_CONFIG.pricingDisclaimer} {SITE_CONFIG.pricingAdditionalNote}
               </p>
             </div>
 

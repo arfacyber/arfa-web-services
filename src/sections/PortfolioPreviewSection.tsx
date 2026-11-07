@@ -1,4 +1,4 @@
-"use client";
+\"use client\";
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
@@ -18,7 +18,7 @@ export function PortfolioPreviewSection() {
         <SectionHeader
           badge="Real Portfolio"
           title="Hasil Pekerjaan & Proyek Nyata"
-          subtitle="Berikut adalah daftar website dan aplikasi berbasis web yang telah dikembangkan menggunakan HTML, Tailwind CSS, JavaScript, PHP, Laravel, dan MySQL."
+          subtitle="Berikut adalah daftar website dan aplikasi berbasis web yang telah dikembangkan menggunakan teknologi pada portfolio utama kami."
         />
 
         <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
@@ -35,7 +35,6 @@ export function PortfolioPreviewSection() {
                 className="flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-navy-900/75 transition hover:border-cyan-500/40"
               >
                 <div>
-                  {/* Frame Screenshot Proyek Berukuran Besar */}
                   <div className="border-b border-white/10 bg-navy-950">
                     <div className="flex items-center justify-between border-b border-white/10 px-4 py-2.5">
                       <div className="flex items-center gap-1.5">
@@ -77,7 +76,7 @@ export function PortfolioPreviewSection() {
                             {project.category}
                           </p>
                           <p className="mt-3 max-w-sm font-mono text-[11px] text-slate-400">
-                            Simpan file screenshot di:{" "}
+                            Simpan file screenshot (.png) di:{" "}
                             <span className="text-slate-300">
                               public{project.imagePath}
                             </span>
@@ -87,13 +86,10 @@ export function PortfolioPreviewSection() {
                     </div>
                   </div>
 
-                  {/* Detail Proyek */}
                   <div className="p-6">
-                    <div className="flex flex-wrap items-center justify-between gap-2">
-                      <span className="font-mono text-xs font-semibold text-cyan-400">
-                        {project.category}
-                      </span>
-                    </div>
+                    <span className="font-mono text-xs font-semibold text-cyan-400">
+                      {project.category}
+                    </span>
 
                     <h3 className="mt-2 text-2xl font-bold text-white">
                       {project.title}
@@ -142,7 +138,7 @@ export function PortfolioPreviewSection() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 rounded-xl bg-cyan-500 px-4 py-2 text-xs font-bold text-navy-950 transition hover:bg-cyan-400"
                       >
-                        <span>Lihat Demo</span>
+                        <span>Live Demo</span>
                         <ExternalLink className="h-3.5 w-3.5" />
                       </a>
                     )}
