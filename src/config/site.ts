@@ -242,20 +242,29 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     statusLabel: "Live Demo Tersedia",
   },
   {
-    id: "absensi-siswa",
-    title: "Absensi Siswa",
-    category: "School Information System",
-    description:
-      "Aplikasi pencatatan kehadiran siswa berbasis web yang dibangun menggunakan PHP, dan penyimpanan MySQL.",
-    imagePath: "/images/portfolio/absensi.png",
-    techStack: ["PHP", "MySQL", "CSS", "JavaScript"],
-    keyFeatures: [
-      "Autentikasi pengguna / pengelola",
-      "Input dan pengelolaan data kehadiran siswa",
-      "Rekapitulasi data absensi terintegrasi database",
-    ],
-    statusLabel: "Sistem Aplikasi Akademik",
-  },
+  id: "laundry-management",
+  title: "Laundry Management System",
+  category: "Business Management System",
+  description:
+    "Aplikasi manajemen laundry berbasis web menggunakan Laravel dan MySQL untuk membantu pengelolaan operasional laundry secara terstruktur.",
+  imagePath: "/images/portfolio/laundry.png",
+  techStack: [
+    "PHP",
+    "Laravel",
+    "MySQL",
+    "Blade",
+    "Tailwind CSS",
+    "JavaScript",
+  ],
+  keyFeatures: [
+    "Autentikasi pengguna",
+    "Manajemen hak akses Admin dan Staff (RBAC)",
+    "Dashboard berdasarkan role pengguna",
+    "Pengelolaan data operasional laundry",
+  ],
+  demoUrl: "https://laundry-management-system-production-1a6d.up.railway.app/",
+  statusLabel: "Business Management Application",
+},
 ];
 
 export const TECH_STACK_CATEGORIES: TechStackCategory[] = [
