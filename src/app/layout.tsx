@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import { SITE_CONFIG } from "@/config/site";
@@ -32,6 +33,15 @@ export const metadata: Metadata = {
     },
   ],
   creator: SITE_CONFIG.developerName,
+
+  // Favicon dan ikon aplikasi
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+  },
+
   alternates: {
     canonical: "/",
   },
